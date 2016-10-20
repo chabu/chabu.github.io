@@ -1,0 +1,46 @@
+@charset "utf-8";
+
+body {
+	font-family: serif;
+}
+
+@media screen and (min-width: 1024px) {
+	body > div {
+		width: 40em;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
+h1 {
+	font-size: x-large;
+	padding-left: 0.25em;
+	background-color: rgb(255, 194, 104);
+	box-shadow: 0 4px 6px rgb(192, 192, 192);
+}
+
+h2 {
+	font-size: large;
+	padding-left: 0.25em;
+	background-color: rgb(255, 234, 140);
+	box-shadow: 0 4px 6px rgb(192, 192, 192);
+}
+
+a:hover {
+	background-color: rgb(228, 238, 255);
+}
+
+ul > li > a {
+	width: 100%;
+	padding-top: 0.25em;
+	padding-bottom: 0.25em;
+	display: inline-block;
+}
+
+section > p {
+	padding-left: 1em;
+}
+
+footer > p {
+	text-align: center;
+}
