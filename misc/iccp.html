@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1">
+		<title>ICC v2 GBR in PNG</title>
+		<script>
+			window.addEventListener('load', function () {
+				var buffer = document.querySelector('#buffer');
+				var surface = buffer.getContext('2d');
+				
+				var png = document.querySelector('#png');
+				surface.drawImage(png, 0.0, 0.0, 64.0, 64.0);
+				
+				var result = document.querySelector('#result');
+				var pixels = surface.getImageData(31.0, 31.0, 1.0, 1.0).data;
+				
+				if (pixels[0] > 127) {
+					result.textContent = 'CMS is working.';
+				} else {
+					result.textContent = 'CMS is *NOT* working.';
+				}
+			});
+		</script>
+	</head>
+	<body>
+		<p id="result">N/A</p>
+		<img id="png" src="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAIAAAAlC+aJAAABDGlDQ1BpY20AAHicY2BgEnF0cXJlEmBg
+yM0rKQpyd1KIiIxSYD/PwMLAysDPwMHAmphcXOAYEODDAAR5+XmpDKiAkYHh2zUQycBwWRdkFgNpgCu5
+oKgESP8BYpWU1OJkoJEKQHZ8eUkBUJyxAcgWScoGs6eA2EUhQc5A9gogmy8dwt4BYidB2CdA7CKgJ4Ds
+GyD16RD2G7A5YDYTyF6RktQKkL0MGsmaCoaWlpYKjin5SakKwZXFJam5xQqeecl6DBD3gAGLu1MQiV4j
+DEBhDWF9DgSHIaPYGYQYAiSXFpVBmYxMxoT5CDOSpjMwbG9nYJC4iRBTmc/AwN/CwLDtMEIsfwEDg8VX
+BgbmCQBaS0f1knKIvwAAAE1JREFUaN7tz0ENAAAIBKDT/p01hQ83aEAlk886zwkICAgICAgICAgICAgI
+CAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAjcW1CHAX9GCM+oAAAAAElFTkSuQmCC">
+		<canvas id="buffer" width="64" height="64"></canvas>
+	</body>
+</html>
