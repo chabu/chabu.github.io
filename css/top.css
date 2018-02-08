@@ -2,10 +2,12 @@
 
 body {
 	font-family: serif;
+	-webkit-text-size-adjust: none; /* for iPhone */
+	word-wrap: break-word; /* will be overflow-wrap */
 }
 
 @media screen and (min-width: 1024px) {
-	body > div {
+	body > main {
 		width: 640px;
 		margin-left: auto;
 		margin-right: auto;
@@ -28,6 +30,13 @@ h2 {
 
 a:hover {
 	background-color: rgb(228, 238, 255);
+}
+
+ul {
+	margin: 0;
+	padding-left: 1em;
+	padding-right: 1em;
+	list-style-type: none;
 }
 
 ul > li > a {
