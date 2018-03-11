@@ -46,7 +46,7 @@ ul > li > a {
 	display: inline-block;
 }
 
-section > p {
+main > p, section > p {
 	padding-left: 1em;
 	padding-right: 1em;
 }
