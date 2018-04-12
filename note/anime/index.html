@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1">
+		<link rel="stylesheet" href="../../css/note.css">
+		<title>今までに見たアニメの一覧</title>
+		<script type="module" async>
+			// think about Microsoft Edge
+			import invoke from "./main.js";
+			import {animes} from "./data.js";
+			invoke(document, animes);
+		</script>
+	</head>
+	<body>
+		<article>
+			<h1>今までに見たアニメの一覧</h1>
+			<p>
+				途中で切ったりしないで、最後まで視聴したもの。
+				映画と OVA も混ぜて、分割 2 クールはまとめた。
+			</p>
+			<main>
+				<template>
+					<section>
+						<h2>YEAR</h2>
+						<ul>
+							<li>NAME</li>
+						</ul>
+					</section>
+				</template>
+			</main>
+			<footer>
+				<p>✏️ chabu</p>
+			</footer>
+		</article>
+		<footer>
+			<nav>
+				<ul>
+					<li><a href="../">トップページへ戻る</a></li>
+				</ul>
+			</nav>
+		</footer>
+	</body>
+</html>
