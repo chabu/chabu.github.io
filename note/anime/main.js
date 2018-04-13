@@ -24,7 +24,7 @@ export default function (document, animes) {
 
 	let nodes = build_tree(document, animes_by_year);
 
-	nice_append(document, nodes);
+	nicely_append(document, nodes);
 }
 
 function build_tree(document, animes_by_year) {
@@ -55,7 +55,7 @@ function build_tree(document, animes_by_year) {
 	return sections;
 }
 
-function nice_append(document, sections) {
+function nicely_append(document, sections) {
 	if (document.readyState === "loading") {
 		document.addEventListener("DOMContentLoaded", sections => {
 			let node = document.querySelector("main");
