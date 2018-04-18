@@ -30,6 +30,7 @@ export default function (document, animes) {
 function build_tree(document, animes_by_year) {
 	let sections = [];
 
+	// XXX: importNode
 	for (let [year, animes] of animes_by_year) {
 		let section = document.createElement("section");
 		let h2 = document.createElement("h2");
@@ -37,7 +38,7 @@ function build_tree(document, animes_by_year) {
 		h2.textContent = `${year}年`;
 		section.appendChild(h2);
 
-		COMPOSE: {
+		CREATE_LIST: {
 			let ul = document.createElement("ul");
 
 			for (let anime of animes) {
