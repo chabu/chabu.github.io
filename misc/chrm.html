@@ -6,8 +6,8 @@
 		<title>gAMA + cHRM in PNG</title>
 		<script>
 			window.addEventListener("load", function () {
-				var buffer = document.querySelector("canvas");
-				var surface = buffer.getContext("2d");
+				var canvas = document.querySelector("canvas");
+				var surface = canvas.getContext("2d");
 
 				var png = document.querySelector("img");
 				surface.drawImage(png, 0.0, 0.0, 64.0, 64.0);
