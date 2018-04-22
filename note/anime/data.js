@@ -1,5 +1,5 @@
-export default [
-// publish_date, title, (true = unfinished, false = watching)
+export const animes = [
+// date_published, title, (true = unfinished, false = watching)
 ["1995-10-04", "新世紀エヴァンゲリオン（オンエア版、セル版）"],
 ["1998-04-07", "カードキャプターさくら クロウカード編"],
 ["1998-07-06", "serial experiments lain"],
