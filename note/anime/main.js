@@ -23,14 +23,13 @@ export default function (document, animes) {
 	}
 
 	let nodes = build_tree(document, animes_by_year);
-
 	nicely_append(document, nodes);
 }
 
 function build_tree(document, animes_by_year) {
 	let sections = [];
 
-	// XXX: importNode
+	// use importNode in future
 	for (let [year, animes] of animes_by_year) {
 		let section = document.createElement("section");
 		let h2 = document.createElement("h2");
