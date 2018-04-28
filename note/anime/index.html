@@ -3,11 +3,13 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="initial-scale=1">
-		<link rel="stylesheet" href="../../css/note.css">
 		<title>今までに見たアニメの一覧</title>
+		<style>
+			@import "../../css/base.css";
+			@import "../../css/note.css";
+		</style>
 		<script type="module" async>
-			// think about Microsoft Edge
-			import invoke from "./main.js";
+			import invoke from "./func.js";
 			import {animes} from "./data.js";
 			invoke(document, animes);
 		</script>
@@ -30,7 +32,7 @@
 				</template>
 			</main>
 			<footer>
-				<p>✏️ chabu</p>
+				<p>chabu</p>
 			</footer>
 		</article>
 		<footer>

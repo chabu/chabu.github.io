@@ -2,68 +2,9 @@
 
 body {
 	font-family: sans-serif;
-	word-wrap: break-word; /* will be overflow-wrap */
-	-webkit-text-size-adjust: none; /* for iPhone */
-}
-
-@media screen and (min-width: 1024px) {
-	body > article, body > footer {
-		width: 640px;
-		margin-left: auto;
-		margin-right: auto;
-	}
-}
-
-h1 {
-	font-size: x-large;
-	padding-left: 0.25em;
-	background-color: rgb(255, 194, 104);
-	box-shadow: 0 2px 2px rgb(192, 192, 192);
-}
-
-h2 {
-	font-size: large;
-	padding-left: 0.25em;
-	background-color: rgb(255, 234, 140);
-	box-shadow: 0 2px 2px rgb(192, 192, 192);
-}
-
-a:hover {
-	background-color: rgb(228, 238, 255);
 }
 
 article > p, section > p {
 	padding-left: 0.5em;
 	padding-right: 0.5em;
-}
-
-figure, footer {
-	text-align: center;
-}
-
-figure {
-	margin-left: 0;
-	margin-right: 0;
-	color: rgb(255, 255, 255);
-	background-color: rgb(0, 0, 0);
-}
-
-figure > img {
-	width: 100%;
-	display: block;
-}
-
-footer > nav > ul {
-	margin: 0;
-	padding: 0;
-	list-style-type: none;
-}
-
-footer > nav > ul > li {
-	display: inline-block;
-}
-
-footer > nav > ul > li > a {
-	padding: 1em;
-	display: inline-block;
 }
