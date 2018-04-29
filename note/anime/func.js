@@ -57,7 +57,7 @@ function build_tree(document, animes_by_year) {
 
 function nicely_append(document, sections) {
 	if (document.readyState === "loading") {
-		document.addEventListener("DOMContentLoaded", sections => {
+		document.addEventListener("DOMContentLoaded", () => {
 			let node = document.querySelector("main");
 			for (let section of sections) {
 				node.appendChild(section);
