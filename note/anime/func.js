@@ -13,17 +13,17 @@ export default function (document, animes) {
 
 		let date = anime[0].split("-");
 		let year = Number.parseInt(date[0], 10);
-		//let month = Number.parseInt(date[1], 10);
+		let month = Number.parseInt(date[1], 10);
 
 		if (animes_by_year.has(year)) {
-			animes_by_year.get(year).push(anime);
+			animes_by_year.get(year).push([anime, month]);
 		} else {
-			animes_by_year.set(year, [anime]);
+			animes_by_year.set(year, [[anime, month]]);
 		}
 	}
 
 	let nodes = build_tree(document, animes_by_year);
-	nicely_append(document, nodes);
+	append_nicely(document, nodes);
 }
 
 function build_tree(document, animes_by_year) {
@@ -40,8 +40,9 @@ function build_tree(document, animes_by_year) {
 		CREATE_LIST: {
 			let ul = document.createElement("ul");
 
-			for (let anime of animes) {
+			for (let [anime, month] of animes) {
 				let li = document.createElement("li");
+				li.classList.add(season(month));
 				li.textContent = anime[1];
 				ul.appendChild(li);
 			}
@@ -55,7 +56,25 @@ function build_tree(document, animes_by_year) {
 	return sections;
 }
 
-function nicely_append(document, sections) {
+function season(month) {
+	/*
+		1 - 3 = winter
+		4 - 6 = spring
+		7 - 9 = summer
+		10 - 12 = autumn
+	*/
+	if (month > 9) {
+		return "autumn";
+	} else if (month > 6) {
+		return "summer";
+	} else if (month > 3) {
+		return "spring";
+	} else {
+		return "winter";
+	}
+}
+
+function append_nicely(document, sections) {
 	if (document.readyState === "loading") {
 		document.addEventListener("DOMContentLoaded", () => {
 			let node = document.querySelector("main");
