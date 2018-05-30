@@ -58,10 +58,10 @@ function build_tree(document, animes_by_year) {
 
 function season(month) {
 	/*
-		1 - 3 = winter
-		4 - 6 = spring
-		7 - 9 = summer
-		10 - 12 = autumn
+		1 ~ 3 = winter
+		4 ~ 6 = spring
+		7 ~ 9 = summer
+		10 ~ 12 = autumn
 	*/
 	if (month > 9) {
 		return "autumn";
