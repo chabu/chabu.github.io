@@ -37,17 +37,24 @@ function build_tree(document, animes_by_year) {
 		h2.textContent = `${year}年`;
 		section.appendChild(h2);
 
-		CREATE_LIST: {
-			let ul = document.createElement("ul");
+		CREATE_TABLE: {
+			let table = document.createElement("table");
 
 			for (let [anime, month] of animes) {
-				let li = document.createElement("li");
-				li.classList.add(season(month));
-				li.textContent = anime[1];
-				ul.appendChild(li);
+				let tr = document.createElement("tr");
+
+				let td1 = document.createElement("td");
+				td1.textContent = anime[1];
+				tr.appendChild(td1);
+
+				let td2 = document.createElement("td");
+				td2.textContent = season(month);
+				tr.appendChild(td2);
+
+				table.appendChild(tr);
 			}
 
-			section.appendChild(ul);
+			section.appendChild(table);
 		}
 
 		sections.push(section);
@@ -64,13 +71,13 @@ function season(month) {
 		10 ~ 12 = autumn
 	*/
 	if (month > 9) {
-		return "autumn";
+		return "\uD83C\uDF41"; // autumn
 	} else if (month > 6) {
-		return "summer";
+		return "\uD83C\uDF3B"; // summer
 	} else if (month > 3) {
-		return "spring";
+		return "\uD83C\uDF38"; // spring
 	} else {
-		return "winter";
+		return "\u2744\uFE0F"; // winter
 	}
 }
 

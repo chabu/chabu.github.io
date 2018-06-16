@@ -5,6 +5,7 @@ body {
 }
 
 article > p, section > p {
-	padding-left: 0.5em;
-	padding-right: 0.5em;
+	width: 95%;
+	margin-left: auto;
+	margin-right: auto;
 }
