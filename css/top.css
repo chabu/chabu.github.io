@@ -5,14 +5,16 @@ body {
 }
 
 main > p, section > p {
-	padding-left: 1em;
-	padding-right: 1em;
+	width: 95%;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 ul {
-	margin: 0;
-	padding-left: 1em;
-	padding-right: 1em;
+	width: 95%;
+	padding: 0;
+	margin-left: auto;
+	margin-right: auto;
 	list-style-type: none;
 }
 
