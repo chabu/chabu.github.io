@@ -18,6 +18,10 @@ ul {
 	list-style-type: none;
 }
 
+ul.underline > li {
+	border-bottom: solid 1px rgb(192, 192, 192);
+}
+
 ul > li > a {
 	width: 100%;
 	padding-top: 0.25em;
