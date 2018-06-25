@@ -14,14 +14,14 @@ body {
 
 h1 {
 	font-size: x-large;
-	padding-left: 0.25em;
+	padding-left: 0.5rem;
 	background-color: rgb(255, 194, 104);
 	box-shadow: 0 2px 2px rgb(192, 192, 192);
 }
 
 h2 {
 	font-size: large;
-	padding-left: 0.25em;
+	padding-left: 0.5rem;
 	background-color: rgb(255, 234, 140);
 	box-shadow: 0 2px 2px rgb(192, 192, 192);
 }
