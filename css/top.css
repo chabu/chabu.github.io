@@ -24,6 +24,6 @@ ul > li > a {
 	display: inline-block;
 	width: calc(100% - 1rem);
 	padding-left: 1rem;
-	padding-top: 0.25em;
-	padding-bottom: 0.25em;
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
 }
