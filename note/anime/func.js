@@ -1,4 +1,4 @@
-export default function (document, animes) {
+export default function (doc, animes) {
 	// date desc
 	animes.sort((a, b) => {
 		return a[0] > b[0] ? -1 : 1;
@@ -22,32 +22,32 @@ export default function (document, animes) {
 		}
 	}
 
-	let nodes = build_tree(document, animes_by_year);
-	append_nicely(document, nodes);
+	let nodes = build_tree(doc, animes_by_year);
+	append_nicely(doc, nodes);
 }
 
-function build_tree(document, animes_by_year) {
+function build_tree(doc, animes_by_year) {
 	let sections = [];
 
 	// use importNode in future
 	for (let [year, animes] of animes_by_year) {
-		let section = document.createElement("section");
-		let h2 = document.createElement("h2");
+		let section = doc.createElement("section");
+		let h2 = doc.createElement("h2");
 
 		h2.textContent = `${year}年`;
 		section.appendChild(h2);
 
 		CREATE_TABLE: {
-			let table = document.createElement("table");
+			let table = doc.createElement("table");
 
 			for (let [anime, month] of animes) {
-				let tr = document.createElement("tr");
+				let tr = doc.createElement("tr");
 
-				let td1 = document.createElement("td");
+				let td1 = doc.createElement("td");
 				td1.textContent = anime[1];
 				tr.appendChild(td1);
 
-				let td2 = document.createElement("td");
+				let td2 = doc.createElement("td");
 				td2.textContent = season(month);
 				tr.appendChild(td2);
 
@@ -81,16 +81,16 @@ function season(month) {
 	}
 }
 
-function append_nicely(document, sections) {
-	if (document.readyState === "loading") {
-		document.addEventListener("DOMContentLoaded", () => {
-			let node = document.querySelector("main");
+function append_nicely(doc, sections) {
+	if (doc.readyState === "loading") {
+		doc.addEventListener("DOMContentLoaded", () => {
+			let node = doc.querySelector("main");
 			for (let section of sections) {
 				node.appendChild(section);
 			}
 		});
 	} else {
-		let node = document.querySelector("main");
+		let node = doc.querySelector("main");
 		for (let section of sections) {
 			node.appendChild(section);
 		}
