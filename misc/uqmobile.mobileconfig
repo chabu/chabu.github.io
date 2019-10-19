@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+	<dict>
+		<key>ConsentText</key>
+		<dict>
+			<key>default</key>
+			<string>UQ mobile (IPv4v6)</string>
+		</dict>
+		<key>PayloadContent</key>
+		<array>
+			<dict>
+				<key>AttachAPN</key>
+				<dict>
+					<key>Name</key>
+					<string>uqmobile.jp</string>
+					<key>AuthenticationType</key>
+					<string>CHAP</string>
+					<key>Username</key>
+					<string>uq@uqmobile.jp</string>
+					<key>Password</key>
+					<string>uq</string>
+					<key>DefaultProtocolMask</key>
+					<integer>3</integer>
+					<key>AllowedProtocolMask</key>
+					<integer>3</integer>
+				</dict>
+				<key>APNs</key>
+				<array>
+					<dict>
+						<key>Name</key>
+						<string>uqmobile.jp</string>
+						<key>AuthenticationType</key>
+						<string>CHAP</string>
+						<key>Username</key>
+						<string>uq@uqmobile.jp</string>
+						<key>Password</key>
+						<string>uq</string>
+						<key>DefaultProtocolMask</key>
+						<integer>3</integer>
+						<key>AllowedProtocolMask</key>
+						<integer>3</integer>
+					</dict>
+				</array>
+				<key>PayloadDescription</key>
+				<string>Provides customization of carrier Access Point Name.</string>
+				<key>PayloadDisplayName</key>
+				<string>Advanced Settings</string>
+				<key>PayloadIdentifier</key>
+				<string>jp.uqmobile.profile.cellular</string>
+				<key>PayloadOrganization</key>
+				<string>UQ Communications Inc.</string>
+				<key>PayloadType</key>
+				<string>com.apple.cellular</string>
+				<key>PayloadUUID</key>
+				<string>39E26356-BE82-41E5-A40E-CE601418AD54</string>
+				<key>PayloadVersion</key>
+				<integer>1</integer>
+			</dict>
+		</array>
+		<key>PayloadDescription</key>
+		<string>UQ mobile (IPv4v6)</string>
+		<key>PayloadDisplayName</key>
+		<string>UQ mobile (IPv4v6)</string>
+		<key>PayloadIdentifier</key>
+		<string>jp.uqmobile.profile</string>
+		<key>PayloadOrganization</key>
+		<string>UQ Communications Inc.</string>
+		<key>PayloadType</key>
+		<string>Configuration</string>
+		<key>PayloadUUID</key>
+		<string>1F61964A-4D24-47F6-B95B-F0459126E3C4</string>
+		<key>PayloadVersion</key>
+		<integer>1</integer>
+	</dict>
+</plist>
