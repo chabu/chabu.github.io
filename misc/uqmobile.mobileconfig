@@ -5,7 +5,7 @@
 		<key>ConsentText</key>
 		<dict>
 			<key>default</key>
-			<string>UQ mobile (IPv4v6)</string>
+			<string>UQ mobile</string>
 		</dict>
 		<key>PayloadContent</key>
 		<array>
@@ -20,10 +20,6 @@
 					<string>uq@uqmobile.jp</string>
 					<key>Password</key>
 					<string>uq</string>
-					<key>DefaultProtocolMask</key>
-					<integer>3</integer>
-					<key>AllowedProtocolMask</key>
-					<integer>3</integer>
 				</dict>
 				<key>APNs</key>
 				<array>
@@ -36,10 +32,6 @@
 						<string>uq@uqmobile.jp</string>
 						<key>Password</key>
 						<string>uq</string>
-						<key>DefaultProtocolMask</key>
-						<integer>3</integer>
-						<key>AllowedProtocolMask</key>
-						<integer>3</integer>
 					</dict>
 				</array>
 				<key>PayloadDescription</key>
@@ -59,9 +51,9 @@
 			</dict>
 		</array>
 		<key>PayloadDescription</key>
-		<string>UQ mobile (IPv4v6)</string>
+		<string>UQ mobile</string>
 		<key>PayloadDisplayName</key>
-		<string>UQ mobile (IPv4v6)</string>
+		<string>UQ mobile</string>
 		<key>PayloadIdentifier</key>
 		<string>jp.uqmobile.profile</string>
 		<key>PayloadOrganization</key>
