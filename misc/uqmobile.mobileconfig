@@ -2,11 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 	<dict>
-		<key>ConsentText</key>
-		<dict>
-			<key>default</key>
-			<string>UQ mobile</string>
-		</dict>
 		<key>PayloadContent</key>
 		<array>
 			<dict>
@@ -34,34 +29,22 @@
 						<string>uq</string>
 					</dict>
 				</array>
-				<key>PayloadDescription</key>
-				<string>Provides customization of carrier Access Point Name.</string>
-				<key>PayloadDisplayName</key>
-				<string>Advanced Settings</string>
 				<key>PayloadIdentifier</key>
 				<string>jp.uqmobile.profile.cellular</string>
-				<key>PayloadOrganization</key>
-				<string>UQ Communications Inc.</string>
 				<key>PayloadType</key>
 				<string>com.apple.cellular</string>
 				<key>PayloadUUID</key>
-				<string>39E26356-BE82-41E5-A40E-CE601418AD54</string>
+				<string>8FF0BEF4-A84B-4896-A8AF-8F10C4B94D2C</string>
 				<key>PayloadVersion</key>
 				<integer>1</integer>
 			</dict>
 		</array>
-		<key>PayloadDescription</key>
-		<string>UQ mobile</string>
-		<key>PayloadDisplayName</key>
-		<string>UQ mobile</string>
 		<key>PayloadIdentifier</key>
 		<string>jp.uqmobile.profile</string>
-		<key>PayloadOrganization</key>
-		<string>UQ Communications Inc.</string>
 		<key>PayloadType</key>
 		<string>Configuration</string>
 		<key>PayloadUUID</key>
-		<string>1F61964A-4D24-47F6-B95B-F0459126E3C4</string>
+		<string>66081324-9279-464A-A171-AC6508B20664</string>
 		<key>PayloadVersion</key>
 		<integer>1</integer>
 	</dict>
