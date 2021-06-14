@@ -1,2 +1,2 @@
 server:
-	ruby -run -e httpd
+	python3 -m http.server
