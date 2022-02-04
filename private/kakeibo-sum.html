@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="initial-scale=1">
+<script>
+"use strict";
+
+const intl = new Intl.NumberFormat(
+	"ja-JP", {style: "currency", currency: "JPY"}
+);
+
+document.addEventListener("DOMContentLoaded", () => {
+	const p = document.querySelector("p");
+	const textarea = document.querySelector("textarea");
+
+	textarea.addEventListener("input", (event) => {
+		const text = event.target.value;
+		const matches = text.matchAll(/^.*?\s(?<price>\d+)/gm);
+
+		let sum = 0;
+		for (const match of matches) {
+			sum += parseInt(match.groups.price, 10);
+		}
+
+		p.textContent = intl.format(sum);
+	});
+});
+</script>
+</head>
+
+<body style="font-family: sans-serif;">
+<p style="font-size: xx-large;">n/a</p>
+<textarea rows="40" style="width: 50%;">
+おやつ 200=100+100
+パン2個 300
+ゲーム 3000 購入8000 売却5000
+</textarea>
+</body>
+
+</html>
