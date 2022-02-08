@@ -16,11 +16,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	textarea.addEventListener("input", (event) => {
 		const text = event.target.value;
-		const matches = text.matchAll(/^.*?\s(?<price>\d+)/gm);
+		const matches = text.matchAll(/(?<operator>[+-])(?<price>\d+)/g);
 
 		let sum = 0;
 		for (const match of matches) {
-			sum += Number(match.groups.price);
+			const price = Number(match.groups.price);
+			if (match.groups.operator === "+") {
+				sum += price;
+			} else {
+				sum -= price;
+			}
 		}
 
 		p.textContent = intl.format(sum);
@@ -32,9 +37,9 @@ document.addEventListener("DOMContentLoaded", () => {
 <body style="font-family: sans-serif;">
 <p style="font-size: xx-large;">n/a</p>
 <textarea rows="40" style="width: 50%;">
-おやつ 200=100+100
-パン2個 300
-ゲーム 3000 購入8000 売却5000
+おやつ -100 -100
+パン2個 -300
+ゲーム 購入-8000 売却+5000
 </textarea>
 </body>
 
