@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 		let sum = 0;
 		for (const match of matches) {
-			sum += parseInt(match.groups.price, 10);
+			sum += Number(match.groups.price);
 		}
 
 		p.textContent = intl.format(sum);
