@@ -16,10 +16,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	textarea.addEventListener("input", (event) => {
 		const text = event.target.value;
-		const matches = text.matchAll(/(?<operator>[+-])(?<price>\d+)/g);
+		const matches = text.matchAll(/(?<operator>[+ ])(?<price>[\d\.]+)/g);
 
 		let sum = 0;
 		for (const match of matches) {
+			if (match.groups.price.includes(".")) {
+				continue;
+			}
 			const price = Number(match.groups.price);
 			if (match.groups.operator === "+") {
 				sum += price;
@@ -28,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			}
 		}
 
-		p.textContent = intl.format(sum);
+		p.textContent = intl.format(-sum);
 	});
 });
 </script>
@@ -37,9 +40,10 @@ document.addEventListener("DOMContentLoaded", () => {
 <body style="font-family: sans-serif;">
 <p style="font-size: xx-large;">n/a</p>
 <textarea rows="40" style="width: 50%;">
-おやつ -100 -100
-パン2個 -300
-ゲーム 購入-8000 売却+5000
+うまい棒5本 10 10 10 10 10
+３色パン 150 (50.0*3) ←？
+３色団子 100 (33.33+33.33+33.33) ←？？
+ゲーム 8000 売却+5000
 </textarea>
 </body>
 
