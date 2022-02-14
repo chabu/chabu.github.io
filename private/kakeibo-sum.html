@@ -21,7 +21,9 @@ document.addEventListener("DOMContentLoaded", () => {
 			if (match.groups.price.includes(".")) {
 				continue;
 			}
+
 			const price = Number(match.groups.price);
+
 			if (match.groups.operator === "+") {
 				sum += price;
 			} else {
@@ -66,9 +68,11 @@ document.addEventListener("DOMContentLoaded", () => {
 </p>
 <textarea rows="40" style="width: 50%;">
 うまい棒5本 10 10 10 10 10
-３色パン 150 (50.0*3)
-３色団子 100 (33.33+33.33+33.33)
+３色パン 150 (50.0+50.0+50.0)
 ゲーム 8000 ポイント獲得+240 売却+5000
+食事（予算より100円安かった場合） +100
+
+↑は2860円になるのが正しい
 </textarea>
 </body>
 
