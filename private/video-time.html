@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+
+<style>
+body {
+	font-family: sans-serif;
+}
+
+p#result {
+	font-size: xx-large;
+}
+
+@media screen and (min-width: 720px) {
+	main {
+		width: 640px;
+		margin: 0 auto;
+	}
+}
+</style>
+
+<script>
+"use strict";
+
+document.addEventListener("DOMContentLoaded", () => {
+	const input_prefix = document.querySelector("#prefix");
+	const input_time = document.querySelector("#time");
+	const p_result = document.querySelector("#result");
+
+	const do_all = () => {
+		const seconds = Number(input_time.value);
+
+		const hours = Math.floor(seconds / 3600) % 24;
+		const mins = Math.floor(seconds / 60) % 60;
+		const secs = Math.floor(seconds) % 60;
+
+		p_result.textContent = `${input_prefix.value}h${hours}m${mins}s${secs}`;
+	};
+
+	input_prefix.addEventListener("input", (event) => {
+		do_all();
+	});
+
+	input_time.addEventListener("input", (event) => {
+		do_all();
+	});
+
+	document.querySelector("#paste").addEventListener("click", () => {
+		navigator.clipboard.readText().then((clip_text) => {
+			 input_time.value = clip_text;
+			 do_all();
+		});
+	});
+
+	document.querySelector("#clear").addEventListener("click", () => {
+		input_time.value = "";
+		do_all();
+	});
+
+	do_all();
+});
+</script>
+
+</head>
+<body>
+<main>
+
+<br>
+<br>
+⬇ prefix<br>
+<input type="text" id="prefix" value="ep1"><br>
+<br>
+<br>
+⬇ document.querySelector("video").currentTime<br>
+<input type="text" id="time">
+<input type="button" value="消去" id="clear">
+<input type="button" value="貼り付け" id="paste">
+<br>
+<br>
+<p id="result">n/a</p>
+
+</main>
+</body>
+</html>
