@@ -3,6 +3,28 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
+
+<style>
+body {
+	font-family: sans-serif;
+}
+
+p#result {
+	font-size: 3em;
+}
+
+textarea {
+	width: 100%;
+}
+
+@media screen and (min-width: 720px) {
+	main {
+		width: 640px;
+		margin: 0 auto;
+	}
+}
+</style>
+
 <script>
 "use strict";
 
@@ -10,63 +32,65 @@ const intl = new Intl.NumberFormat(
 	"ja-JP", {style: "currency", currency: "JPY"}
 );
 
-document.addEventListener("DOMContentLoaded", () => {
-	const calc = (a, b) => {
-		const text = a.value;
-		const matches = text.matchAll(/(?<operator>[+ ])(?<price>[\d\.]+)/g);
-
-		let sum = 0;
-
-		for (const match of matches) {
-			if (match.groups.price.includes(".")) {
-				continue;
-			}
-
-			const price = Number(match.groups.price);
-
-			if (match.groups.operator === "+") {
-				sum += price;
-			} else {
-				sum -= price;
-			}
-		}
-
-		b.textContent = intl.format(-sum);
-	};
-
-	const resultP = document.querySelector("#result");
-	const clearButton = document.querySelector("#clear");
-	const pasteButton = document.querySelector("#paste");
+function sync() {
+	const result = document.querySelector("#result");
 	const textarea = document.querySelector("textarea");
 
-	clearButton.addEventListener("click", () => {
+	const matches = textarea.value.matchAll(/(?<operator>[+ ])(?<price>[\d\.]+)/g);
+
+	let sum = 0;
+
+	for (const match of matches) {
+		if (match.groups.price.includes(".")) {
+			continue;
+		}
+
+		const price = Number(match.groups.price);
+
+		if (match.groups.operator === "+") {
+			sum += price;
+		} else {
+			sum -= price;
+		}
+	}
+
+	result.textContent = intl.format(-sum);
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+	const textarea = document.querySelector("textarea");
+
+	document.querySelector("#clear").addEventListener("click", () => {
 		textarea.value = "";
-		calc(textarea, resultP);
+		sync();
 	});
 
-	pasteButton.addEventListener("click", () => {
-		navigator.clipboard.readText().then((text) => {
-			 textarea.value = text;
-			 calc(textarea, resultP);
+	document.querySelector("#paste").addEventListener("click", () => {
+		navigator.clipboard.readText().then((clip_text) => {
+			 textarea.value = clip_text;
+			 sync();
 		});
 	});
 
 	textarea.addEventListener("input", (event) => {
-		calc(event.target, resultP);
+		// event.target
+		sync();
 	});
 
-	calc(textarea, resultP);
+	sync();
 });
 </script>
-</head>
 
-<body style="font-family: sans-serif;">
-<p style="font-size: xx-large;" id="result">n/a</p>
+</head>
+<body>
+<main>
+
+<p id="result">n/a</p>
 <p>
 <input type="button" value="消去" id="clear">
 <input type="button" value="貼り付け" id="paste">
 </p>
-<textarea rows="40" style="width: 50%;">
+<textarea rows="40">
 うまい棒5本 10 10 10 10 10
 ３色パン 150 (50.0+50.0+50.0)
 ゲーム 8000 ポイント獲得+240 売却+5000
@@ -74,6 +98,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 ↑は2860円になるのが正しい
 </textarea>
-</body>
 
+</main>
+</body>
 </html>
